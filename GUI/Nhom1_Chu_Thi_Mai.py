@@ -1,8 +1,5 @@
 import sys
 from PyQt6.QtWidgets import *
-from PyQt6.QtGui import *
-from PyQt6.QtCore import *
-from datetime import date, datetime
 
 class MyMainWindow(QWidget):
     def __init__(self):
@@ -13,9 +10,8 @@ class MyMainWindow(QWidget):
         self.input_num1 = QLineEdit()
         self.sign = QLineEdit()
         self.input_num2 = QLineEdit()
-        self.label = QLabel()
-        self.label.setText("")
         self.button = QPushButton("Calculate")
+        self.label = QLabel()
 
         self.layout.addRow(QLabel("Enter num 1"))
         self.layout.addRow(self.input_num1)
@@ -24,10 +20,10 @@ class MyMainWindow(QWidget):
         self.layout.addRow(QLabel("Enter num 2"))
         self.layout.addRow(self.input_num2)
         self.layout.addRow(self.button)
+        self.layout.addRow(self.label)
 
         self.setLayout(self.layout)
         self.button.clicked.connect(self.buttonClicked)
-        self.layout.addRow(self.label)
 
     def buttonClicked(self):
         self.input_num1 = self.input_num1.text()

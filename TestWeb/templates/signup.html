@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký</title>
+</head>
+<body>
+    <h3>Signup Form</h3>
+    <form method="post" action="signup">
+        <label>Username (at least 3 characters)</label>
+        <input type="text" name="name" id="name" placeholder="Username" required minlength="3">
+        <label>Password (at least 5 characters)</label>
+        <input type="password" name="password" id="password" required minlength="5">
+        <label>Email</label>
+        <input type="email" name="email" id="email" placeholder="Email">
+        <button type="submit">Sign up</button>
+    </form>
+    <div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div style="color: red;">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
